@@ -3,11 +3,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class StatsServiceTest {
-
+    StatsService service = new StatsService();
     /* Сумма всех продаж */
     @Test
     void shouldCalculateSumByYear() {
-        StatsService service = new StatsService();
         long[] salesByMonth;
         salesByMonth = new long[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         long expected = 180;
@@ -17,7 +16,6 @@ class StatsServiceTest {
     /* Средняя сумма всех продаж */
     @Test
     void shouldCalculateAverageSaleByYear() {
-        StatsService service = new StatsService();
         long[] salesByMonth;
         salesByMonth = new long[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         long expected = 15;
@@ -27,7 +25,6 @@ class StatsServiceTest {
     /* Номер месяца в котором был пик продаж */
     @Test
     void shouldShowMonthMaxSales() {
-        StatsService service = new StatsService();
         long[] salesByMonth;
         salesByMonth = new long[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         long expected = 8;
@@ -37,7 +34,6 @@ class StatsServiceTest {
     /* Номер месяца в котором был минимум продаж */
     @Test
     void shouldShowMonthMinSales() {
-        StatsService service = new StatsService();
         long[] salesByMonth;
         salesByMonth = new long[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         long expected = 9;
@@ -47,7 +43,6 @@ class StatsServiceTest {
     /* Кол-во месяцев, в которых продажи были ниже среднего */
     @Test
     void shouldCalculateMonthsLowerAverageSales() {
-        StatsService service = new StatsService();
         long[] salesByMonth;
         salesByMonth = new long[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         long expected = 5;
@@ -57,7 +52,6 @@ class StatsServiceTest {
     /* Кол-во месяцев, в которых продажи были выше среднего */
     @Test
     void shouldCalculateMonthsUpperAverageSales() {
-        StatsService service = new StatsService();
         long[] salesByMonth;
         salesByMonth = new long[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         long expected = 5;
@@ -65,5 +59,3 @@ class StatsServiceTest {
         assertEquals(expected, actual);
     }
 }
-
-
