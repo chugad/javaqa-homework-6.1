@@ -1,6 +1,7 @@
 package ru.netology.stats;
 
 public class StatsService {
+
     /* Сумма всех продаж */
     public long calculateSumByYear(long[] salesByMonth) {
         long sumByYear = 0;
@@ -13,8 +14,7 @@ public class StatsService {
     }
     /* Средняя сумма всех продаж */
     public long calculateAverageSaleByYear(long[] salesByMonth) {
-        StatsService service = new StatsService();
-        long averageSaleByYear = service.calculateSumByYear(salesByMonth) / salesByMonth.length;
+        long averageSaleByYear = calculateSumByYear(salesByMonth) / salesByMonth.length;
         return averageSaleByYear;
     }
     /* Номер месяца в котором был пик продаж */
@@ -46,9 +46,8 @@ public class StatsService {
     /* Кол-во месяцев, в которых продажи были ниже среднего */
     public long calculateMonthsLowerAverageSales(long[] salesByMonth) {
         long monthsLowerAverageSales = 0;
-        StatsService service = new StatsService();
         for (long sale : salesByMonth) {
-            if (sale < service.calculateAverageSaleByYear(salesByMonth)) {
+            if (sale < calculateAverageSaleByYear(salesByMonth)) {
                 monthsLowerAverageSales++;
             }
         }
@@ -57,9 +56,8 @@ public class StatsService {
     /* Кол-во месяцев, в которых продажи были выше среднего */
     public long calculateMonthsUpperAverageSales(long[] salesByMonth) {
         long monthsUpperAverageSales = 0;
-        StatsService service = new StatsService();
         for (long sale : salesByMonth) {
-            if (sale > service.calculateAverageSaleByYear(salesByMonth)) {
+            if (sale > calculateAverageSaleByYear(salesByMonth)) {
                 monthsUpperAverageSales++;
             }
         }
